@@ -1,0 +1,1 @@
+INDEX VERSION 1.126+C:\Users\Bowen\Documents\Individual Projects\CompetitionSystem\.metadata\.plugins\org.eclipse.jdt.core

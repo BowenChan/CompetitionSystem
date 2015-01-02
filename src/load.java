@@ -28,16 +28,20 @@ public class load extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				SelectionView a = new SelectionView();
+
+				//VVPRIMARY ERROR CURRENTLY VV
+				//unable to setvisible false without the nextframe losing pixel
 				//frame.setVisible(false);
 				//frame.dispose();
+				SelectionView a = new SelectionView();
+				
 			}
 			
 		});
 		
 		frame.setSize(400, 400);
 		frame.add(create);
-		
+		frame.pack();
 		frame.setVisible(true);
 	}
 	

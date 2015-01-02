@@ -38,10 +38,10 @@ public class SelectionView extends JFrame {
 				switch(value)
 				{
 				case 0:
-					System.out.println("Table Tennis");
+					TableTennisView a = new TableTennisView();
 					break;
 				case 1:
-					System.out.println("Basketball");
+					BasketBallView b = new BasketBallView();
 					break;
 				default:
 					System.out.println("Nothing");
@@ -66,7 +66,7 @@ public class SelectionView extends JFrame {
 		a.add(load,c);
 		
 		selection.add(a);
-		
+		selection.pack();
 		selection.setVisible(true);
 	}
 	

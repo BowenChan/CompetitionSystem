@@ -9,9 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class SelectionView {
+public class SelectionView extends JFrame {
 
-	public static void main(String args[])
+	public SelectionView()
 	{
 		//intialize frame
 		JFrame selection = new JFrame("Sport Selection");
@@ -21,7 +21,7 @@ public class SelectionView {
 		a.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		selection.setSize(500, 500);
+		selection.setSize(300, 500);
 		
 		
 		
@@ -52,19 +52,21 @@ public class SelectionView {
 		});
 		//create comboBox
 		
-		c.ipady = 40;      //make this component tall
+		c.ipady = 20;      //make this component tall
+		c.ipadx = 5;
 		c.weightx = 0.0;
-		c.gridwidth = 3;
+		c.gridwidth = 1;
 		c.gridx = 0;
 		c.gridy = 1;
 		a.add(box, c);
 		
 		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 1;
-		c.gridy = 2;
+		c.gridx = 2;
+		c.gridy = 1;
 		a.add(load,c);
 		
 		selection.add(a);
+		
 		selection.setVisible(true);
 	}
 	
@@ -75,7 +77,7 @@ public class SelectionView {
 	 * 
 	 * @return the dropdown menu used in the view
 	 */
-	public static JComboBox createDropdown()
+	public JComboBox createDropdown()
 	{
 		String[] sport = {"Table Tennis", "BasketBall"};
 		

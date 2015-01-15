@@ -1,48 +1,70 @@
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-
-
-public class load extends JFrame{
-
-	public static void main(String args[])
-	{
-		
-		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-	        public void run() {
-	            loadGui();
-	        }
-	    });
-	}
+	import java.awt.BorderLayout;
+	import java.awt.EventQueue;
+	import java.awt.event.ActionEvent;
+	import java.awt.event.ActionListener;
+	import java.lang.reflect.InvocationTargetException;
 	
-	private static void loadGui()
-	{
+	import javax.swing.JButton;
+	import javax.swing.JFrame;
+	import javax.swing.UIManager;
+	
+	
+public class load {
+
+	private JFrame frame;
+
+	public static void main(String args[]) throws InvocationTargetException,
+			InterruptedException {
+
+		EventQueue.invokeAndWait(new Runnable() {
+			public void run() {
+				try {
+					UIManager.setLookAndFeel(UIManager
+							.getSystemLookAndFeelClassName());
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+				// Create the UI here
+				load window = new load();
+
+				window.frame.setVisible(true);
+				window.frame.revalidate();
+				window.frame.repaint();
+			}
+		});
+	}
+
+	public load() {
+		loadGui();
+	}
+
+	private void loadGui() {
 		JButton create = new JButton("Start");
-		final JFrame frame = new JFrame();
-		//frame.setLayout(new BorderLayout());
-		create.addActionListener(new ActionListener(){
+		frame = new JFrame();
+		// frame.setLayout(new BorderLayout());
+		create.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 
-				//VVPRIMARY ERROR CURRENTLY VV
-				//unable to setvisible false without the nextframe losing pixel
-				//frame.setVisible(false);
-				//frame.dispose();
 				SelectionView a = new SelectionView();
-				
+
+				// VVPRIMARY ERROR CURRENTLY VV
+				// unable to setvisible false without the nextframe losing pixel
+				frame.setVisible(false);
+				frame.dispose();
+				a.revalidate();
+				a.repaint();
+
 			}
-			
+
 		});
-		
+
 		frame.setSize(400, 400);
 		frame.add(create);
 		frame.pack();
-		frame.setVisible(true);
+
 	}
-	
+
 }
